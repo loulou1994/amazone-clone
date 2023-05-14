@@ -11,7 +11,7 @@ import styles from '../styles/header.module.css';
 import { MdArrowDropDown } from 'react-icons/md';
 import { FiSearch, FiShoppingCart } from 'react-icons/fi';
 import logo from '../public/images/logo.svg';
-import { ImExit } from 'react-icons/Im';
+import { ImExit } from 'react-icons/im';
 
 const Header = () => {
   const router = useRouter();

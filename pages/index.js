@@ -9,7 +9,7 @@ import setGridSize from '../utils/homeCardGridSize';
 import urlFor from '../sanity-studio/utils/imgUrlBuilder';
 
 import Layout from '../components/Layout';
-import styles from '../styles/home.module.css';
+import styles from '../styles/Home.module.css';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 import imageLoader from '../utils/imageLoader';
