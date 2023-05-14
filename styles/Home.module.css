@@ -1,129 +1,125 @@
-.container {
-  padding: 0 2rem;
+.home {
+    position: relative;
+    padding-block-start: 16rem;
+    padding-block-end: 3.5rem;
+    background-color: var(--main-bg);
 }
 
-.main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+/*********** hero section  ***********/
+.home__hero, .home__hero > div {
+    position: absolute;
+    inset: 0;
 }
 
-.footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
+.home__hero {
+    max-height: 34.375rem;
+    overflow: hidden;
 }
 
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+.home__hero > div {
+    opacity: 0;
+    transition: all 350ms linear;
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.home__hero > .prev-slide {
+    transform: translateX(-100%);
 }
 
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
+.home__hero > .current-slide {
+    opacity: 1;
+    transform: translateX(0);
 }
 
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
+.home__hero > .next-slide {
+    transform: translateX(100%);
 }
 
-.title,
-.description {
-  text-align: center;
+.home__hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    top: 220px;
+    background: linear-gradient(-180deg,rgba(234,237,237,0), var(--light-gray));
+    z-index: 1;
 }
 
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
+.hero-btns {
+    position: absolute;
+    top: 0;
+    padding: 7rem 1.1rem;
+    border: 0;
+    border-radius: .25rem;
+    background-color: transparent;
 }
 
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+.hero-btns:focus {
+    outline: 0.125rem solid var(--sky-blue);
 }
 
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
+.left-btn {
+    left: 0;
+}
+.right-btn{
+    right: 0;
 }
 
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
+.hero-btns > svg{
+    width: 35px;
+    height: auto;
+}
+/*********** category cards section ***********/
+.home__categories {
+    display: grid;
+    width: min(71.875rem, 100%);
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
 }
 
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+.home__categories > .card {
+    position: relative;
+    padding: 1rem;
+    background-color: var(--white);
+    z-index: 1;
+    height: 21.1875rem;
 }
 
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
+.card > h2, .card > div {
+    margin-bottom: .6rem;
 }
 
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
+.card > div {
+    position: relative;
+    height: 78%;
+    /* height: 236.34px; */
 }
 
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
+.card > a {
+    color: var(--sky-blue);
 }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
+@media (min-width: 36.25rem) {
+    .home__categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-@media (prefers-color-scheme: dark) {
-  .card,
-  .footer {
-    border-color: #222;
-  }
-  .code {
-    background: #111;
-  }
-  .logo img {
-    filter: invert(1);
-  }
+@media (min-width: 49.375rem) {    
+    .home__categories {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .home__hero {
+        max-height: 53.125rem;
+    }
+}
+/* 64.5em */
+@media (min-width: 75rem) {
+    .home {
+        padding-inline: 3.75rem;
+    }
+
+    .home__categories {
+        grid-template-columns: repeat(4, 1fr);
+        margin-inline: auto;
+    }
 }

@@ -1,9 +1,72 @@
-html,
-body {
+:root {
+  /* colors */
+  --bluish-black: #131921;
+  --grayish-blue: #37475A;
+  --dark-blue: #232F3E;
+  --light-gray: #eaeded;
+  --sky-blue: #3C92A2;
+  --yellow: #FFD814;
+  --black: #000000;
+  --white: #ffffff;
+  /* component colors */
+  --main-bg: var(--light-gray);
+  --header-bg: var(--bluish-black);
+  --search-btn-clr: var(--yellow);
+  --heading-clr: var(--black);
+  --text-clr: var(--white);
+  --footer-bg: var(--dark-blue);
+  --transition: .35s ease-in-out;
+}
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+html, body, #__next {
+  min-height: 100vh;
+}
+
+body {
+  font-family: var(--ff-primary);
+  font-size: 1rem;
+  color: var(--text-clr);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--heading-clr);
+  line-height: 1.1;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+#__next {
+  isolation: isolate;
 }
 
 a {
@@ -11,16 +74,57 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+/* utility classes */
+.sr-only { /* available only to screen readers */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
+.flex {
+  display: flex;
+  gap: var(--gap);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap);
+}
+.outer-spacing {
+  padding-inline: .5rem;
+}
+
+.sml-txt {
+  font-size: 0.75rem;
+}
+
+.select-options {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    opacity: 0;
+    cursor: pointer;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+/* global */
+main {
+  padding-inline: 1.5rem;
+}
+
+@media(min-width: 64.5rem) {
+  main {
+    padding-inline: 2rem;
   }
 }

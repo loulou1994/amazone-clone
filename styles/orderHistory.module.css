@@ -1,0 +1,115 @@
+.order-history-main {
+  height: 100vh;
+  padding-block: 2rem;
+  color: var(--black);
+}
+
+/*************** styles for empty order-history page  ************/
+.empty-container {
+  /* --gap: 1.5rem; */
+  height: 90%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty-container > img {
+  margin-bottom: 1.5rem;
+  width: clamp(195px, 162px + 10%, 354px);
+  height: auto;
+}
+
+.empty-container > h1 {
+  margin-bottom: 0.4rem;
+}
+
+.empty-container > p {
+  color: var(--black);
+}
+
+/************* styles for non-empty order-history page **************/
+
+.order-history-main h1 {
+  margin-bottom: 2rem;
+}
+
+.order-history__table {
+  width: min(1100px, 95%);
+  margin: auto;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.order-history__table th {
+  font-weight: 600;
+  background-color: #d1e8f5;
+}
+
+.order-history-main td {
+  border-bottom: 1px solid var(--light-gray);
+  font-size: clamp(0.875rem, 0.1875rem + 1.15vw, 1rem);
+}
+
+.order-history__table td,
+.order-history__table th {
+  padding: 1.125rem 1.5rem;
+}
+
+@media (max-width: 59.375em) {
+  .order-history-main {
+    height: auto;
+  }
+
+  .order-history-main h1 {
+    margin-top: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .order-history__table,
+  .order-history__table tbody,
+  .order-history__table tr,
+  .order-history__table td {
+    display: block;
+    width: 100%;
+  }
+  .order-history__table th {
+    display: none;
+  }
+
+  .order-history__table tr {
+    margin-bottom: 1.5rem;
+  }
+
+  .order-history__table td {
+    padding-left: 40%;
+    position: relative;
+  }
+
+  .order-history__table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    padding-left: 1rem;
+    font-weight: 600;
+  }
+
+  .order-history__table > tbody tr:nth-child(even) {
+    background-color: #d1e8f5;
+  }
+}
+
+@media (max-width: 35.5625em) {
+  .order-history__table td {
+    padding-inline: 0;
+    padding-top: 3.25rem;
+    text-align: center;
+  }
+
+  .order-history__table td::before {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-left: 0;
+    padding-top: 18px;
+  }
+}
