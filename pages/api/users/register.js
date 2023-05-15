@@ -1,5 +1,4 @@
 import nc from 'next-connect';
-import bcrypt from 'bcryptjs';
 import { signToken } from '../../../utils/auth';
 import { client } from '../../../utils/queryData';
 import mutatingSanityContent from '../../../utils/sanityDocMutation';
